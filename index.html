@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Mom!</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #2b2b2b;
+            color: white;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .container {
+            max-width: 800px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #ff6347;
+        }
+
+        .birthday-message {
+            font-size: 2em;
+            margin-top: 20px;
+        }
+
+        .hidden-btn {
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        .hidden-btn:hover {
+            background-color: #ff4500;
+        }
+    </style>
+</head>
+<body>
+    <!-- Audio Element -->
+    <audio id="birthdayAudio" loop>
+        <source src="birthday.html.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>🎉 Happy Birthday, Mom! 🎉</h1>
+        <p class="birthday-message">Enjoy this beautiful day! ❤️</p>
+        <button id="revealBtn" class="hidden-btn">Click for Birthday Surprise!</button>
+    </div>
+
+    <script>
+        const audio = document.getElementById('birthdayAudio');
+        const revealBtn = document.getElementById('revealBtn');
+        const messageContainer = document.querySelector('.birthday-message');
+
+        revealBtn.addEventListener('click', function () {
+            messageContainer.innerHTML = "🎉 🎂 Surprise!<br><br>&nbsp;&nbsp;&nbsp;&nbsp;You are the best Mom ever! 🎂 🎉";
+            revealBtn.style.display = 'none';
+            audio.play(); // Play audio when button is clicked
+        });
+    </script>
+</body>
+</html>
+
